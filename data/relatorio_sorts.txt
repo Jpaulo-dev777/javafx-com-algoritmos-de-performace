@@ -1,0 +1,52 @@
+RELATÓRIO DE COMPARAÇÃO DE ALGORITMOS DE ORDENAÇÃO
+==================================================
+
+Quantidade de registros: 5000
+Campo utilizado para ordenação: prioridade (1 = mais)
+
+TEMPOS (em milissegundos aproximados)
+-------------------------------------
+Merge Sort: 413,463 ms
+Quick Sort: 207,539 ms
+Heap Sort:  3,911 ms
+
+Ordenações idênticas entre si? NÃO
+
+ANÁLISE TEÓRICA
+----------------
+- Merge Sort:
+  • Complexidade: O(n log n) no melhor, médio e pior caso.
+  • Estável (mantém a ordem relativa de elementos com a mesma prioridade).
+  • Usa memória extra proporcional ao tamanho do vetor (não é in-place).
+
+- Quick Sort:
+  • Complexidade média: O(n log n), mas pior caso O(n^2).
+  • Geralmente é o mais rápido na prática para dados em RAM,
+    devido a melhor localidade de cache e poucas operações extras.
+  • Não é estável na forma clássica.
+  • É in-place (usa pouca memória extra).
+
+- Heap Sort:
+  • Complexidade: O(n log n) em qualquer caso.
+  • In-place (não usa memória extra relevante).
+  • Normalmente é mais lento que QuickSort na prática, mesmo tendo
+    mesma ordem de complexidade, por causa de mais operações de troca
+    e acessos menos sequenciais à memória.
+
+COMPARAÇÃO PRÁTICA NESTE TESTE
+--------------------------------
+Melhor tempo observado: Heap Sort
+
+POR QUE ESTE FOI O MELHOR AQUI?
+--------------------------------
+- Heap Sort normalmente não é o mais rápido, mas pode se destacar
+  em cenários específicos ou por detalhes da máquina/VM.
+  Ele tem complexidade garantida O(n log n) e é in-place.
+
+OBSERVAÇÕES IMPORTANTES
+------------------------
+- Esses resultados valem para ESTE tamanho de entrada (5000) e
+  para ESTA máquina/execução.
+- Para uma análise mais confiável, seria importante rodar múltiplas vezes
+  e calcular a média dos tempos, além de testar tamanhos diferentes
+  (ex: 1.000, 5.000, 10.000, 50.000 registros).
